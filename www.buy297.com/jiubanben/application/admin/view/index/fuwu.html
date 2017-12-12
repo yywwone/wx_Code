@@ -1,0 +1,106 @@
+{extend name="base"/}
+{block name="distcss"}
+<link rel="stylesheet" href="__ADMIN__/dist/css/nav.css">
+{/block}
+{block name="content"}
+    <div class="nav_left">
+    	<div class="nav_leftlist">
+    	 	<h2 class="nav_leftlist_fenlei nav_leftlist_h2">
+	        	<span class="nav_leftlist_name">编号</span>
+	        	<span class="nav_leftlist_name">名称</span>
+	        	<span class="nav_leftlist_name">背景图片</span>
+	        	<span class="nav_leftlist_name">图标</span>
+	        	<span class="nav_leftlist_name nav_leftlist_name1">服务介绍</span>
+	        	<span class="nav_leftlist_name nav_leftlist_name1">服务流程</span>
+        	</h2>
+    	</div>
+    {volist name="pagintor" id="item"}
+    <div class="nav_leftlist">
+        <h2 class="nav_leftlist_fenlei">
+            <span class="nav_leftlist_name">{$item.id}</span>
+            <span class="nav_leftlist_name">{$item.name}</span>
+            <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item.img}"></span>
+            <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item.image}"></span>
+            <div class="nav_leftlist_name_del">
+                <span class="nav_leftlist_name nav_leftlist_name2 nav_leftlist_name2_1"><a href="{:url('upfuwu','id='.$item['id'])}" >修改</a></span>
+               <!--  <span class="nav_leftlist_name nav_leftlist_name2"><a href="{:url('scfuwu','id='.$item['id'])}">删除</a></span> -->
+            </div>
+        </h2>
+        <?php
+        $pagintor1=db('fuwu')->where('f_id',$item['id'])->select();
+        ?>
+        {volist name="pagintor1" id="item1"}
+        <dl>
+            <dt  class="nav_leftlist_fenlei">
+                <span class="nav_leftlist_name">{$item1.id}</span>
+                <span class="nav_leftlist_name">{$item1.name}</span>
+                <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item1.img}"></span>
+                <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item1.image}"></span>
+                <div class="nav_leftlist_name_del">
+                    <span class="nav_leftlist_name nav_leftlist_name2"><a href="{:url('upfuwu','id='.$item1['id'])}">修改</a></span>
+                    <span class="nav_leftlist_name nav_leftlist_name2"><a href="{:url('scfuwu','id='.$item1['id'])}" title="确认删除" onclick="if(confirm('确认删除')){return true;}else{return false;}">删除</a></span>
+                </div>
+            </dt>
+            <?php
+                $pagintor2=db('fuwu')->where('f_id',$item1['id'])->select();
+            ?>
+            {volist name="pagintor2" id="item2"}
+            <dd>
+                <span class="a1 nav_leftlist_fenlei" >
+                    <span class="nav_leftlist_name">{$item2.id}</span>
+                    <span class="nav_leftlist_name">{$item2.name}</span>
+                    <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item2.img}"></span>
+                    <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item2.image}"></span>
+                    <p class="nav_leftlist_name nav_leftlist_name1 nav_leftlist_name3">{$item2.fw_js}</p>
+                    <p class="nav_leftlist_name nav_leftlist_name1 nav_leftlist_name3">{$item2.fw_lc}</p>
+                    <div class="nav_leftlist_name_del">
+                        <span class="nav_leftlist_name nav_leftlist_name2"><a href="{:url('up_fuwu','id='.$item2['id'])}">修改</a></span>
+                        <span class="nav_leftlist_name nav_leftlist_name2"><a href="{:url('scfuwu','id='.$item2['id'])}" title="确认删除" onclick="if(confirm('确认删除')){return true;}else{return false;}">删除</a></span>
+                    </div>
+                </span>
+            </dd>
+            {/volist}
+        </dl>
+        {/volist}
+    </div>
+    {/volist}
+    {volist name="pag" id="item"}
+    <div class="nav_leftlist1">
+        <h2 class="nav_leftlist_fenlei">
+            <span class="nav_leftlist_name">{$item.id}</span>
+            <span class="nav_leftlist_name">{$item.name}</span>
+            <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item.img}"></span>
+            <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item.image}"></span>
+            <div class="nav_leftlist_name_del">
+                <span class="nav_leftlist_name nav_leftlist_name2 nav_leftlist_name2_1"><a href="{:url('upfuwu','id='.$item['id'])}">修改</a></span>
+               <!--  <span class="nav_leftlist_name nav_leftlist_name2"><a href="{:url('scfuwu','id='.$item['id'])}">删除</a></span> -->
+            </div>
+        </h2>
+       <?php
+                $pag2=db('fuwu')->where('f_id',$item['id'])->select();
+        ?> 
+    {volist name="pag2" id="item1"}
+        <dl>
+            <dt  class="nav_leftlist_fenlei">
+                 <span class="a1 nav_leftlist_fenlei" >
+                    <span class="nav_leftlist_name">{$item1.id}</span>
+                    <span class="nav_leftlist_name">{$item1.name}</span>
+                    <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item1.img}"></span>
+                    <span class="nav_leftlist_name"><img src="__UPLOAD__/{$item1.image}"></span>
+                    <p class="nav_leftlist_name nav_leftlist_name1 nav_leftlist_name3"></p>
+                    <p class="nav_leftlist_name nav_leftlist_name1 nav_leftlist_name3"></p>
+                    <div class="nav_leftlist_name_del">
+                        <span class="nav_leftlist_name nav_leftlist_name2"><a href="{:url('up_fuwu','id='.$item1['id'])}">修改</a></span>
+                        <span class="nav_leftlist_name nav_leftlist_name2"><a href="{:url('scfuwu','id='.$item1['id'])}" title="确认删除" onclick="if(confirm('确认删除')){return true;}else{return false;}">删除</a></span>
+                    </div>
+                </span>
+            </dt>
+
+        </dl>
+       {/volist} 
+    </div>  
+    {/volist}   
+{/block}
+{block name="javascript"}
+<script type="text/javascript" src="__ADMIN__/dist/js/nav.js"></script>
+{/block}

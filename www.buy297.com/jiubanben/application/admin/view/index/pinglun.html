@@ -1,0 +1,38 @@
+{extend name="base"/}
+{block name="distcss"}
+<style>
+	th{width:300px;height:30px;text-align: center}
+	td{width:300px;height: 30px;text-align: center}
+	input{border: none;width: 100%;height: 100%;}
+</style>
+{/block}
+{block name="content"}
+<table border="1" cellspacing="0" style="margin: 0 auto">
+		<tr>
+			<th>编号</th>
+			<th>姓名</th>
+			<th>服务内容</th>
+			<th>评论内容</th>
+			<th>服务公司</th>
+			<th>编辑</th>	
+		</tr>
+	{volist name="pagintor" id="item"}
+	<?php
+	$fws=db('fuwushang')->where('id',$item['fws_id'])->find();
+	$fw=db('fuwu')->where('id',$item['f_id'])->find();
+	?>
+		<tr>
+			<td>{$item.id}</td>
+			<td>{$item.pj_name}</td>
+			<td>{$fw.name}</td>
+			<td>{$item.pj_nr}</td>
+			<td>{$fws.name}</td>
+			<td>
+				<a href="{:url('sc_pj','id='.$item['id'])}" title="确认删除" onclick="if(confirm('确认删除')){return true;}else{return false;}">删除</a>
+			</td>
+			
+		</tr>
+	{/volist}
+		
+	</table>
+{/block}

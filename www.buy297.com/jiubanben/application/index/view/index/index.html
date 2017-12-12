@@ -1,0 +1,123 @@
+{extend name="base"/}
+{block name="distcss"}
+<link href="__HOME__/dist/css/wx_qt_index.css" rel="stylesheet">
+<link href="__HOME__/dist/css/animate.min.css" rel="stylesheet">
+{/block}
+</head>
+
+{block name="content"}
+<!--轮播-->
+<div class="wx_qt_header">
+		<div class="wx_qt_index_ds">
+			<!--地址栏-->
+			<span class="wx_qt_index_ds_dz">丽水</span>
+			<!--搜索栏-->
+			<div class="wx_qt_index_ds_ss">
+				<form>
+					<input type="text" placeholder="请输入搜索内容" class="wx_qt_index_ds_ss_input">
+					<input type="image" src="__HOME__/dist/images/index_ss.png" class="wx_qt_index_ds_ss_input_img">
+				</form>
+			</div>
+			<a href="{:url('personal')}"><img src="__HOME__/dist/images/index_yhzx.png" class="wx_qt_index_grzx_img"></a>
+		</div>
+		<!--轮播-->
+		<div class="wx_qt_index_slider_box">
+			<div class="wx_qt_index_slider_img">
+				<img src="__UPLOAD__/{$xinxi.lb_img1}">
+				<img src="__UPLOAD__/{$xinxi.lb_img2}">
+			</div>
+			<div class="wx_qt_index_slider_sx">
+				<div class="wx_qt_index_slider_sx_pre"></div>
+				<div class="wx_qt_index_slider_sx_next"></div>
+			</div>
+		</div>
+	</div>
+<div class="wx_qt_index_main_box">
+	<!--分类-->
+	<div class="wx_qt_fl_box_box">
+		<div class="wx_qt_fl_box">
+			<div class="wx_qt_fl_box_main"><a href="{:url('yqfc')}">
+				<img src="__HOME__/dist/images/index_fl4.png">
+				<p>园区风采</p>
+			</a></div>	
+			<div class="wx_qt_fl_box_main"><a href="{:url('zsyz')}">
+				<img src="__HOME__/dist/images/index_fl3.png">
+				<p>招商引资</p>
+			</a></div>
+			<div class="wx_qt_fl_box_main"><a href="{:url('qyfw','id='.$pagintor['4']['id'])}">
+				<img src="__UPLOAD__/{$pagintor.4.img}">
+				<p>{$pagintor.4.name}</p>
+			</a></div>
+			<div class="wx_qt_fl_box_main"><a href="{:url('qyfw','id='.$pagintor['0']['id'])}">
+				<img src="__UPLOAD__/{$pagintor.0.img}">
+				<p>{$pagintor.0.name}</p>
+			</a></div>
+			<div class="wx_qt_fl_box_main"><a href="{:url('qyfw','id='.$pagintor['1']['id'])}">
+				<img src="__UPLOAD__/{$pagintor.1.img}">
+				<p>{$pagintor.1.name}</p>
+			</a></div>
+			<div class="wx_qt_fl_box_main"><a href="{:url('qyfw','id='.$pagintor['2']['id'])}">
+				<img src="__UPLOAD__/{$pagintor.2.img}">
+				<p>{$pagintor.2.name}</p>
+			</a></div>
+			<div class="wx_qt_fl_box_main"><a href="{:url('qyfw','id='.$pagintor['3']['id'])}">
+				<img src="__UPLOAD__/{$pagintor.3.img}">
+				<p>{$pagintor.3.name}</p>
+			</a></div>
+			
+			<div class="wx_qt_fl_box_main"><a href="{:url('qbfl')}">
+				<img src="__HOME__/dist/images/index_fl8.png">
+				<p>全部分类</p>
+			</a></div>	
+		</div>
+	</div>
+</div>
+	<!--广播-->
+	<div class="guangbo">
+        <img src="__HOME__/dist/images/guangbo.png" alt="广播" class="pulse animated infinite">
+        <ul class="guangbo_text">
+            <ul class="guangbo_text_ul1">
+                <li><a href="#">11111习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+                <li><a href="#">习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+                <li><a href="#">习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+                <li><a href="#">习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+                <li><a href="#">习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+                <li><a href="#">习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+                <li><a href="#">习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+                <li><a href="#">习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+                <li><a href="#">习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+                <li><a href="#">习近平总书记会见全国道德模范代表引发强烈反响领航新征程</a></li>
+            </ul>
+            <ul class="guangbo_text_ul2"></ul>
+
+        </ul>
+
+	</div>
+	<!--入园企业风采-->
+	<div class="wx_qt_fc_box">
+		<h1><a href="{:url('gslb')}">入园企业风采</a></h1>
+		<div class="wx_qt_fc_box_main">
+			{volist name="pagintor1" id="item"}
+			<div class="wx_qt_fc_box_main_con"><a href="{:url('aboutc','id='.$item['id'])}">
+				<img src="__UPLOAD__/{$item.img}">
+				<p>{$item.name}</p>
+			</a></div>
+			{/volist}
+			<div class="wx_qt_fc_box_main_con"><a href="{:url('gslb')}">
+				<img src="__HOME__/dist/images/index_qyfc4.png">
+				<p>更多企业&gt;&gt;</p>
+			</a></div>
+		</div>
+	</div>
+
+<!--底部banner-->
+<img src="__UPLOAD__/{$xinxi.db_img}" class="wx_qt_index_banner_bt">
+<!-- 底部栏显示标识 -->
+<div class="wx_qt_dbgdl_active">0</div>
+{/block}
+{block name="javascript"}
+<script src="__HOME__/dist/js/index_slider.js"></script>
+<script src="__HOME__/dist/js/hd.js"></script>
+<script src="__HOME__/dist/js/hd_kz.js"></script>
+<script src="__HOME__/dist/js/wx_index_text.js"></script>
+{/block}

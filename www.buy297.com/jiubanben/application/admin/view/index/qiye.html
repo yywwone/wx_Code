@@ -1,0 +1,108 @@
+{extend name="base"/}
+{block name="distcss"}
+<!--本页CSS-->
+<link href="__HOME__/dist/css/yqqyck.css" rel="stylesheet">
+
+{/block}
+{block name="content"}
+<div class="wx_ht_yqqyck_box">
+	<!--标题-->
+	<div class="wx_ht_yqqyck_box_row">
+		<div class="wx_ht_yqqyck_box_row_con">
+			<p>ID</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con1">
+			<p>名称</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con2">
+			<p>负责人</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con3">
+			<p>简介</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con6">
+			<p>电话</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con4">
+			<p>缩略图</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con5">
+			<p>背景</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con3">
+			<p>详情</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con2">
+			<p>评价</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con6">
+			<p>地址</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con3">
+			<p>荣誉</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con8">
+			<p>状态</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con8">
+			<p>编辑</p>
+		</div>
+	</div>
+	<!--内容栏-->
+	{volist name="pagintor" id="item"}
+	<div class="wx_ht_yqqyck_box_row">
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 ">
+			<p>{$item.id}</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con1 ">
+			<p>{$item.name}</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con2 ">
+			<p>{$item.fuzeren}</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con3">
+			<textarea class="" readonly>{$item.jianjie}</textarea>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con6 ">
+			<p>{$item.tel}</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con4">
+			<img src="__UPLOAD__/{$item.img}">
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con5">
+			<img src="__UPLOAD__/{$item.image}">
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con3">
+			<textarea  class="" readonly>{$item.xiangqing}</textarea>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con2 ">
+			<p>{$item.fw_pj}分</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con7">
+			<p>{$item.add}</p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1 wx_ht_yqqyck_box_row_con3">
+			<textarea class="" readonly>{$item.qy_rongyu}</textarea>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1  wx_ht_yqqyck_box_row_con8 ">
+			<p><?php if ($item['biaoshi']==1) {
+				echo "入驻企业";
+					}else{
+				echo "服务商";		
+					}
+			 	?></p>
+		</div>
+		<div class="wx_ht_yqqyck_box_row_con wx_ht_yqqyck_box_row_con_1  wx_ht_yqqyck_box_row_con8 ">
+			<p><a href="{:url('upqiye','id='.$item['id'])}">修改</a><a href="{:url('scqiye','id='.$item['id'])}" title="确认删除" onclick="if(confirm('确认删除')){return true;}else{return false;}">删除</a>
+			<?php if ($item['biaoshi']==2) {
+			?>
+			<a href="{:url('xuanze','id='.$item['id'])}">选择服务项目</a>
+			<?php		
+					}
+			 ?>
+			</p>
+		</div>
+	</div>
+	{/volist}
+</div>
+{/block}

@@ -1,0 +1,62 @@
+/* CSS Document */
+*{padding: 0;margin: 0;text-decoration:none;list-style: none;font-family: 微软雅黑;outline: none;}
+.wx_ht_xg{
+	width: 1000px;
+	margin: 50px auto;
+}
+.wx_ht_xg_box{
+	margin-top: 15px;
+}
+.wx_ht_xg_box_flname{
+	width: 180px;
+	height: 30px;
+	padding-left: 5px;
+}
+.wx_ht_xg_name{
+	float: left;
+	margin-bottom: 15px;
+}
+.wx_ht_xg_box_img{
+	width: 100%;
+	max-width: 1000px;
+}
+#pic{
+	width:100px;
+	height:100px;
+	cursor: pointer;
+}
+#pic1{
+	width:749px;
+	height:485px;
+	cursor: pointer;
+}
+.wx_ht_xg_box_fljs{
+	width: 30%;
+	height:350px;
+	resize: none;
+	padding: 5px;
+	box-sizing: border-box;
+}
+.wx_ht_xg_submit{
+	width: 180px;
+	height: 30px;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-left: 125px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

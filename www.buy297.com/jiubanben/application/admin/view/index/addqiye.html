@@ -1,0 +1,98 @@
+{extend name="base"/}
+{block name="distcss"}
+<link rel="stylesheet" href="__HOME__/dist/css/yqqyxg.css">
+{/block}
+{block name="content"}
+     <div class="wx_ht_yqqyxg_box">
+	<form action="{:url('addqiye')}" method="post" enctype="multipart/form-data">
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name">
+				<p>企业名称</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai">
+				<input type="text" name="name" class="">
+			</div>
+		</div>
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name">
+				<p>负责人</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai">
+				<input type="text" name="fuzeren" class="">
+			</div>
+		</div>
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name">
+				<p>简介</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai wx_ht_yqqyxg_con_con_xiugai_jj">
+				<textarea class="" name="jianjie"></textarea>
+			</div>
+		</div>
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name">
+				<p>电话</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai">
+				<input type="text" name="tel" class="">
+			</div>
+		</div>
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name">
+				<p>缩略图</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai">
+				<img id="pic" src="">
+				<input id="upload" name="img" accept="image/*" type="file" style="display: none"/>
+			</div>
+		</div>
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name">
+				<p>背景</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai">
+				<img id="pic1" src="">
+				<input id="upload1" name="image" accept="image/*" type="file" style="display: none"/>
+			</div>
+		</div>
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name">
+				<p>详情</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai">
+				<textarea class="" name="xiangqing"></textarea>
+			</div>
+		</div>
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name">
+				<p>地址</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai wx_ht_yqqyxg_con_con_xiugai_dz">
+				<textarea class="" name="add"></textarea>
+			</div>
+		</div>
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name ">
+				<p>荣誉</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai wx_ht_yqqyxg_con_con_xiugai_jj">
+				<textarea class="" name="qy_rongyu"></textarea>
+			</div>
+		</div>
+		<div class="wx_ht_yqqyxg_con_box">
+			<div class="wx_ht_yqqyxg_con_name">
+				<p>状态</p>
+			</div>
+			<div class="wx_ht_yqqyxg_con_con_xiugai wx_ht_yqqyxg_con_con_xiugai_danxuan">
+				<label><input name="biaoshi" type="radio" value="1" />入驻企业</label> 
+				<label><input name="biaoshi" type="radio" value="2" />服务商 </label> 
+			</div>
+		</div>
+		<input type="submit" name="" class="wx_ht_yqqyxg_con_con_tijiao" value="修改">
+	</form>
+	
+</div>      
+{/block}
+{block name="javascript"}
+<script type="text/javascript" src="__HOME__/dist/js/peizhi1.js"></script>
+{/block}

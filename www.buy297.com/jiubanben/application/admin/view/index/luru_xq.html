@@ -1,0 +1,90 @@
+{extend name="base"/}
+{block name="distcss"}
+<style>
+	*{padding: 0;margin: 0;text-decoration:none;list-style: none;font-family: 微软雅黑;outline: none;}
+	td{padding: 10px;text-align: center}
+</style>
+{/block}
+{block name="content"}
+        <div class="">
+	<table border="1" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>批次</td>
+			<td>{$item.pici}</td>
+		</tr>
+		<tr>
+			<td>公司名称</td>
+			<td>{$item.gs_name}</td>
+		</tr>
+		<tr>
+			<td>法定代表人</td>
+			<td>{$item.gs_faren}</td>
+		</tr>
+		<tr>
+			<td>公司电话</td>
+			<td>{$item.gs_tel}</td>
+		</tr>
+		<tr>
+			<td>公司地址</td>
+			<td>{$item.gs_add}</td>
+		</tr>
+		<tr>
+			<td>主营业务</td>
+			<td>{$item.gs_yw}</td>
+		</tr>
+		<tr>
+			<td>代表产品</td>
+			<td>{$item.gs_cp}</td>
+		</tr>
+		<tr>
+			<td>新增成果</td>
+			<td>{$item.gs_cg}</td>
+		</tr>
+		<tr>
+			<td>主要指标</td>
+			<td>{$item.gs_zb}</td>
+		</tr>
+		<tr>
+			<td>从业人数</td>
+			<td>{$item.congy_renshu}</td>
+		</tr>
+		<tr>
+			<td>创业人数</td>
+			<td>{$item.cy_renshu}</td>
+		</tr>
+		<tr>
+			<td>技术职称</td>
+			<td>{$item.gs_js}</td>
+		</tr>
+		<tr>
+			<td>高新企业</td>
+			<td>{$item.gx_qiye}</td>
+		</tr>
+		<tr>
+			<td>科技企业</td>
+			<td>{$item.kj_qiye}</td>
+		</tr>
+		<tr>
+			<td>专利数量</td>
+			<td>{$item.zl_shuliang}</td>
+		</tr>
+		<tr>
+			<td>有效专利</td>
+			<td>{$item.yx_zhuanli}</td>
+		</tr>
+		<tr>
+			<td>软件著作权</td>
+			<td>{$item.gs_zzq}</td>
+		</tr>
+		<tr>
+			<td>注册地</td>
+			<td>{$item.zc_add}</td>
+		</tr>
+		<tr>
+			<td>缴税地</td>
+			<td>{$item.js_add}</td>
+		</tr>
+		
+	</table>
+</div>   
+{/block}

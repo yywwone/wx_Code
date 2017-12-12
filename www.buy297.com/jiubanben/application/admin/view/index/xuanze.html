@@ -1,0 +1,63 @@
+{extend name="base"/}
+{block name="distcss"}
+<style type="text/css">
+	*{margin: 0;padding: 0;}
+	.erjihezi{
+		overflow: hidden;
+	}
+	.sanji{
+		width:200px;
+		height:50px;
+		float:left;
+		line-height:50px;
+	}
+	.xiugai_box{
+		width: 300px;
+		margin-left: 300px;
+		margin-bottom: 30px;
+	}
+	.xiugai{
+		width: 300px;
+		height: 50px;
+		
+
+	}
+</style>
+{/block}
+{block name="content"}
+<div>
+	<form action="{:url('xuanze','id='.$id)}" method="post">
+		{volist name="pagintor" id="item"}
+		<?php
+		$pagintor1=db('fuwu')->where('f_id',$item['id'])->select();
+		?>
+		{volist name="pagintor1" id="item1"}
+		<?php
+		$pagintor2=db('fuwu')->where('f_id',$item1['id'])->select();
+		?>
+		<div class="erjihezi">
+			<h3>{$item1.name}</h3>
+			{volist name="pagintor2" id="item2"}
+			<div class="sanji">
+
+				<label><input type="checkbox" 
+			<?php 
+				$isin=in_array($item2['id'],$arr);
+				if ($isin) {
+					echo 'checked="checked"';
+				}
+			?> 
+			name="iid[]" value="{$item2.id}">
+	 			{$item2.name}</label>
+			</div>
+			{/volist}	
+		</div>
+		{/volist}
+		{/volist}
+
+		<div class="xiugai_box"><button class="xiugai">修改</button></div>
+	</form>
+	
+</div>
+    
+{/block}

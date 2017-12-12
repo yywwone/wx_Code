@@ -1,0 +1,44 @@
+{extend name="base"/}
+{block name="distcss"}
+<style>
+	th{width:300px;height:30px;text-align: center}
+	td{width:300px;height: 30px;text-align: center}
+	input{border: none;width: 100%;height: 100%;}
+</style>
+{/block}
+{block name="content"}
+<table border="1" cellspacing="0" style="margin: 0 auto">
+		<tr>
+			<th>编号</th>
+			<th>账户名</th>
+			<th>姓名</th>
+			<th>添加时间</th>
+			<th>编辑</th>	
+		</tr>
+	{volist name="pagintor" id="item"}
+		<tr>
+			<td>{$item.id}</td>
+			<td>{$item.name}</td>
+			<td>{$item.s_name}</td>
+			<td>{$item.create_time}</td>
+			<td>
+				<?php
+					if ($item['id']==1) {
+						?>
+				<a href="{:url('xgusers','id='.$item['id'])}">修改</a>
+						<?php
+						
+					}else{
+				?>
+				<a href="{:url('sc_users','id='.$item['id'])}" title="确认删除" onclick="if(confirm('确认删除')){return true;}else{return false;}">删除</a>
+				<?php
+					}
+				?>
+				
+			</td>
+			
+		</tr>
+	{/volist}
+		
+	</table>
+{/block}

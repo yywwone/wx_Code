@@ -1,0 +1,13 @@
+{extend name="base"/}
+{block name="content"}
+<form action="{:url('addusers')}" method="post">
+		
+	账  户：<input name="name" type="text">
+	<p></p>
+	密  码：<input name="pwds" type="text">
+	<p></p>
+	姓  名：<input name="s_name" type="text">
+	<p></p>	
+		<button>添加</button>
+</form>     
+{/block}

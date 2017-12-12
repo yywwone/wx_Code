@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>公司详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link href="__HOME__/dist/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="__HOME__/dist/css/aboutc.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="company-banner-box">
+			<img src="__UPLOAD__/{$item.image}">
+		</div>
+		<div class="company-logo-box">
+			<h1>{$item.name}</h1>
+		</div>
+		<p class="p-main">
+			{$item.xiangqing}
+		</p>
+		<div class="honor">
+			<h3>企业荣誉</h3>
+			<p class="honor-main">
+				{$item.qy_rongyu}
+			</p>
+		</div>
+		<!-- 底部栏显示标识 -->
+		<script src="__HOME__/dist/js/mobblie.js"></script>
+		<script src="__HOME__/dist/js/jquery-1.11.0.min.js"></script>
+	</body>
+</html>

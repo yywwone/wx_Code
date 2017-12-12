@@ -1,0 +1,70 @@
+{extend name="base"/}
+{block name="distcss"}
+<!--本页CSS-->
+<link href="__HOME__/dist/css/wx_ht_qyxxxg.css" rel="stylesheet">
+
+{/block}
+{block name="content"}
+        <div class="wx_ht_qyxxxg_box">
+	<!--首页-->
+	<form action="{:url('wzxx')}" enctype="multipart/form-data" method="post">
+		<div class="wx_ht_qyxxxg_con_box">
+			<span class="wx_ht_qyxxxg_name">官网轮播图1修改:</span>
+			<img id="pic" src="__UPLOAD__/{$item.lb_img1}">
+			<input type="hidden" value="{$item.xddh}" name="xddh">
+			<input id="upload" name="lb_img1" accept="image/*" type="file" style="display: none"/>
+			<input type="submit" class="wx_ht_qyxxxg_submit1" value="修改">
+		</div>
+	</form>
+	<form action="{:url('wzxx')}" enctype="multipart/form-data" method="post">	
+		<div class="wx_ht_qyxxxg_con_box">
+			<input type="hidden" value="{$item.xddh}" name="xddh">
+			<span class="wx_ht_qyxxxg_name">官网轮播图2修改:</span>
+			<img id="pic1" src="__UPLOAD__/{$item.lb_img2}">
+			<input id="upload1" name="lb_img2" accept="image/*" type="file" style="display: none"/>
+			<input type="submit" class="wx_ht_qyxxxg_submit1" value="修改">
+		</div>
+	</form>
+	<form action="{:url('wzxx')}" enctype="multipart/form-data" method="post">		
+		<div class="wx_ht_qyxxxg_con_box">
+			<input type="hidden" value="{$item.xddh}" name="xddh">
+			<span class="wx_ht_qyxxxg_name">首页底部banner图修改:</span>
+			<img id="pic2" src="__UPLOAD__/{$item.db_img}">
+			<input id="upload2" name="db_img" accept="image/*" type="file" style="display: none"/>
+			<input type="submit" class="wx_ht_qyxxxg_submit1" value="修改">
+		</div>
+	</form>
+	<form action="{:url('wzxx')}" enctype="multipart/form-data" method="post">		
+		<!--招商引资-->
+		<div class="wx_ht_qyxxxg_con_box">
+			<input type="hidden" value="{$item.xddh}" name="xddh">
+			<span class="wx_ht_qyxxxg_name">招商引资banner图修改:</span>
+			<img id="pic3" src="__UPLOAD__/{$item.rz_img}">
+			<input id="upload3" name="rz_img" accept="image/*" type="file" style="display: none"/>
+			<input type="submit" class="wx_ht_qyxxxg_submit1" value="修改">
+		</div>
+	</form>
+	<form action="{:url('wzxx')}" enctype="multipart/form-data" method="post">	
+		<div class="wx_ht_qyxxxg_con_box">
+			<span class="wx_ht_qyxxxg_name">招商政策修改:</span>
+			<textarea class="wx_ht_qyxxxg_zsxx" name="zszc">{$item.zszc}</textarea>
+		</div>
+		<div class="wx_ht_qyxxxg_con_box">
+			<span class="wx_ht_qyxxxg_name">申请入驻修改:</span>
+			<textarea class="wx_ht_qyxxxg_zsxx" name="rzxx">{$item.rzxx}</textarea>
+		</div>
+		<div class="wx_ht_qyxxxg_con_box">
+			<span class="wx_ht_qyxxxg_name">联系我们修改:</span>
+			<textarea class="wx_ht_qyxxxg_zsxx" name="lxwm">{$item.lxwm}</textarea>
+		</div>
+		<div class="wx_ht_qyxxxg_con_box">
+			<span class="wx_ht_qyxxxg_name">下单联系电话:</span>
+			<input type="text" value="{$item.xddh}" name="xddh">
+		</div>
+		<input type="submit" class="wx_ht_qyxxxg_submit" value="修改">
+	</form>
+</div>   
+{/block}
+{block name="javascript"}
+<script src="__HOME__/dist/js/peizhi.js"></script>
+{/block}

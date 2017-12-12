@@ -1,0 +1,137 @@
+{extend name="base"/}
+{block name="distcss"}
+<link rel="stylesheet" href="__ADMIN__/dist/css/wx_ht_tjfl.css">
+{/block}
+{block name="content"}
+   <form action="{:url('addfuwu')}" method="post" class="wx_ht_xgfl_form" enctype="multipart/form-data">
+		<div class="wx_ht_xgfl_form_fl_box">
+			<select name="yiji">
+				
+				<option value="20">企业服务</option>
+				<option value="33">物业服务</option>
+				<option value="34">财税服务</option>
+				<option value="35">人才资源</option>
+				<option value="36">场地租售</option>
+				
+			</select>
+			<select name="erji">
+				<option>添加二级分类</option>
+			</select>
+			<select name="sanji">
+				<option>添加三级分类</option>
+			</select>
+		</div>
+		<div>
+			<div class="wx_ht_input_box">
+				<div class="wx_ht_input_main_box">
+					<span class="wx_ht_input_main_name">分类名称：</span>
+					<input type="" name="name" placeholder="请输入分类名称">
+				</div>
+				<div class="wx_ht_input_main_box">
+					<span class="wx_ht_input_main_name">分类图标：</span>
+					<img id="pic" src="">
+					<input id="upload" name="img" accept="image/*" type="file" style="display: none"/>
+				</div>
+				<div class="wx_ht_input_main_box">
+					<span class="wx_ht_input_main_name">分类背景：</span>
+					<img id="pic1" src="">
+					<input id="upload1" name="image" accept="image/*" type="file" style="display: none"/>
+				</div>
+			</div>
+			<div class="wx_ht_input_box">
+				<div class="wx_ht_input_main_box">
+					<span class="wx_ht_input_main_name">三级服务介绍：</span>
+					<textarea name="fu_js" class="wx_ht_input_main_fwjs"></textarea>
+				</div>
+				<div class="wx_ht_input_main_box">
+					<span class="wx_ht_input_main_name">三级服务流程：</span>
+					<textarea name="fu_lc" class="wx_ht_input_main_fwjs" ></textarea>
+				</div>
+				
+			</div>
+			<div class="wx_ht_input_box">
+				<input type="submit" value="添加" class="wx_ht_input_submit">
+			</div>
+			
+		</div>
+		
+		
+		
+	
+</form>
+        
+{/block}
+{block name="javascript"}
+<script src="__ADMIN__/dist/js/sanji.js"></script>
+<script src="__ADMIN__/dist/js/tupianshangchuan.js"></script>
+<script>
+
+$(function(){
+	 $("select").eq(0).click(function(){
+		var This_val=$(this).val();
+
+		// var patt1 = new RegExp("添加");
+		// var result = patt1.test(This_val);
+
+		var patt2 = new RegExp("20");
+		var result2 = patt2.test(This_val);
+
+		$(".wx_ht_input_box").hide();
+		$("select").eq(0).show().siblings().hide();
+		// if(result){
+		// 	$(".wx_ht_input_box").eq(0).show().siblings().hide();
+		// 	$(".wx_ht_input_box").eq(2).show();
+		// 	$("select").eq(0).show().siblings().hide();
+		// }else{
+			if(result2){
+				$("select").hide();
+				$("select").eq(0).show();
+				$("select").eq(1).show();
+				$(".wx_ht_input_box").eq(0).show().siblings().hide();
+				$(".wx_ht_input_box").eq(2).show();
+				$.ajax({
+						type: "post",  //get   
+						url: "{:url('add')}",  //html  txt  xml  php  jsp 
+						data: "name="+This_val+""  , //传给服务器的数据
+						dataType:"",
+						success: function(data){  //data存返回数据
+							$("select").eq(1).find("option").remove();
+							var c="<option>添加二级分类</option>"
+							$("select").eq(1).append(c);
+							$.each(data,function(i,n)
+			       			 {
+			           
+			            		var b="<option value='"+n.id+"'>"+n.name+"</option>";
+
+			           			 $("select").eq(1).append(b);
+
+			        		});  
+			        	}   
+				});
+			}else{
+				$("select").hide();
+				$("select").eq(0).show();
+				$("select").eq(2).show();
+				$(".wx_ht_input_box").show()
+			}
+		// }
+	});
+	$("select").eq(1).click(function(){
+		var This_val=$(this).val();
+		var patt1 = new RegExp("添加");
+		var result = patt1.test(This_val);
+		$(".wx_ht_input_box").hide();
+			if(result){
+				$("select").eq(2).hide();
+				$(".wx_ht_input_box").eq(0).show().siblings().hide();
+				$(".wx_ht_input_box").eq(2).show();
+			}else{
+				$("select").show();
+				$(".wx_ht_input_box").show();
+			}
+	})
+		
+	
+});	
+</script>
+{/block}

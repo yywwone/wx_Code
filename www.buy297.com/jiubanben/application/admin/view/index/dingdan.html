@@ -1,0 +1,102 @@
+{extend name="base"/}
+{block name="distcss"}
+<!--本页CSS-->
+<link href="__HOME__/dist/css/fwsck.css" rel="stylesheet">
+
+{/block}
+{block name="content"}
+<div class="wx_ht_fwsck_box">
+	<form action="" method="post">
+		<div class="wx_ht_fwsck_main_tit_box">
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0">
+				<p class="">编号</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0">
+				<p class="">服务项目</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0">
+				<p class="">联系人</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0 ">
+				<p class="">电话</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0">
+				<p class="">地址</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0">
+				<p class="">服务商</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0">
+				<p class="">服务商电话</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0">
+				<p class="">下单时间</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0">
+				<p class="">状态</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_0 ">
+				<p class="">操作</p>
+			</div>
+		</div>
+		{volist name="pagintor" id="item"}
+		<div class="wx_ht_fwsck_main_tit_box">
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1">
+				<p class="">{$item.id}</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1">
+				<p class="">{$item.fw_name}</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1">
+				<p class="">{$item.name}</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1">
+				<p class="">{$item.tel}</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1 wx_ht_fwsck_main_tit_con_fws">
+				<p class="">{$item.add}</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1 wx_ht_fwsck_main_tit_con_fws">
+				<p class="">{$item.fws_name}</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1">
+				<p class="">{$item.fws_tel}</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1">
+				<p class="">{$item.create_time}</p>
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1">
+				<?php
+				if ($item['zhuangtai']==0) {
+			?>
+			<p class="">已下单</p>
+			<?php	
+				}elseif($item['zhuangtai']==1){
+			?>
+			<p class="">进行中</p>
+			<?php
+				}elseif($item['zhuangtai']==2){
+			?>
+			<p class="">已完成</p>
+			<?php
+				}elseif($item['zhuangtai']==3){
+			?>
+			<p class="">已评价</p>
+			<?php
+				}
+			?>
+				
+			</div>
+			<div class="wx_ht_fwsck_main_tit_con wx_ht_fwsck_main_tit_con_1 ">
+				<p class=""><a href="{:url('scdingdan','id='.$item['id'])}" title="确认删除" onclick="if(confirm('确认删除')){return true;}else{return false;}">删除</a></p>
+			</div>
+		</div>
+		{/volist}
+	</form>
+</div>
+	
+
+{/block}
+{block name="javascript"}
+<script type="text/javascript" src="__HOME__/dist/js/wx_ht_fwsck.js"></script>
+{/block}

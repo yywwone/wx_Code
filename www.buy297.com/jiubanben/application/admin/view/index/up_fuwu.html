@@ -1,0 +1,37 @@
+{extend name="base"/}
+{block name="distcss"}
+<link href="__ADMIN__/dist/css/wx_ht_xg.css" rel="stylesheet">
+{/block}
+{block name="content"}
+<div class="wx_ht_xg">
+	<form action="{:url('up_fuwu','id='.$item['id'])}" method="post" enctype="multipart/form-data">
+		<div class="wx_ht_xg_box">
+			<span>分类名称：</span>
+			<input type="text" name="name" value="{$item.name}" class="wx_ht_xg_box_flname">
+		</div>
+		<div class="wx_ht_xg_box">
+			<span class="wx_ht_xg_name">分类图标：</span>
+			<img id="pic" src="__UPLOAD__/{$item.img}">
+			<input id="upload" name="img" accept="image/*" type="file" style="display: none"/>
+		</div>
+		<div class="wx_ht_xg_box">
+			<span class="wx_ht_xg_name">分类背景：</span>
+			<img id="pic1" src="__UPLOAD__/{$item.image}">
+			<input id="upload1" name="image" accept="image/*" type="file" style="display: none"/>
+		</div>
+		<div class="wx_ht_xg_box">
+			<span class="wx_ht_xg_name">分类介绍：</span>
+			<textarea name="fw_js" class="wx_ht_xg_box_fljs">{$item.fw_js}</textarea>
+		</div>
+		<div class="wx_ht_xg_box">
+			<span class="wx_ht_xg_name">分类流程：</span>
+			<textarea name="fw_lc" class="wx_ht_xg_box_fljs">{$item.fw_lc}</textarea>
+		</div>
+		<input type="submit" value="修改" class="wx_ht_xg_submit">
+		
+	</form>
+</div>     
+{/block}
+{block name="javascript"}
+<script src="__ADMIN__/dist/js/wx_ht_xg_img_peizhi.js"></script>
+{/block}

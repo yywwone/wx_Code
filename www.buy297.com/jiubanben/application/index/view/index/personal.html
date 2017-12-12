@@ -1,0 +1,33 @@
+{extend name="base"/}
+{block name="distcss"}
+		<link href="__HOME__/dist/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="__HOME__/dist/css/wx_qt_foot.css" rel="stylesheet">
+		<link href="__HOME__/dist/css/personal.css" type="text/css" rel="stylesheet"/>
+{/block}
+</head>
+
+{block name="content"}
+		<header class="hello-personal-box">
+			<div class="welcoming-speech">
+				<p class="welcoming"><img style="width:50px;height:50px;border-radius:50px" src="{$item.img}"></p>
+				<p class="ur-name"><span>{$item.name}</span></p>
+			</div>
+		</header>
+		<div class="content-box">
+			<ul class="nav-bars">
+				<li><a href="{:url('enter')}"><span class="icon icon-bridge"></span>企业录入</a></li>
+				<li><a href="{:url('oder')}"><span class="icon icon-indent"></span>服务订单</a></li>
+				<li><a href="{:url('fwpj')}"><span class="icon icon-suggest"></span>投诉建议</a></li>
+				<li><a href="{:url('alter')}"><span class="icon icon-alter"></span>修改信息</a></li>
+			</ul>
+		</div>
+		<div class="exit-box">
+			<a href="{:url('logout')}">退出登录</a>
+		</div>
+		<!-- 底部栏显示标识 -->
+			<div class="wx_qt_dbgdl_active">3</div>
+	{/block}
+{block name="javascript"}
+		<script  src="__HOME__/dist/js/mobblie.js"></script>
+		<script src="__HOME__/dist/js/font_440400_waj7qmu35o2yb9.js"></script>
+{/block}
